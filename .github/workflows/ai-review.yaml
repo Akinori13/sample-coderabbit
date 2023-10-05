@@ -5,11 +5,10 @@ permissions:
   pull-requests: write
 
 on:
-  pull_request:
-    types: [opened]
-    branches-ignore:
-      - master
-      - main
+  pull_request_target:
+    types: [opened, synchronize, reopened]
+  pull_request_review_comment:
+    types: [created]
 
 concurrency:
   group:
